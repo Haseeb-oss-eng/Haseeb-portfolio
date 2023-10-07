@@ -31,6 +31,13 @@
           <ul><li>2015-2016</li></ul>
         </ul>
       </div></p>
+      <p>
+        <div>
+        {% for job in jobs %}
+          {% include 'include.html'%}
+        {% endfor %}
+        </div>
+      </p>
       <button type = "button" class="btn btn-secondary">Contact me</button>
     </div>
   </body>
