@@ -1,5 +1,5 @@
 #import flask
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
 JOBS = [{
   'id': 1,
@@ -28,6 +28,11 @@ app = Flask(__name__)
 @app.route('/')
 def hello_haseeb():
   return render_template('home.html', jobs=JOBS)
+
+
+@app.route('/api/jobs')
+def list_jobs():
+  return jsonify(JOBS)
 
 
 if __name__ == "__main__":
